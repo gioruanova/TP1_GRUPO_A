@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "sass": "^1.67.0"
+  },
+  "scripts": {
+    "css": "sass --watch sass/main.scss css/theme.css"  },
+  "devDependencies": {
+    "node-sass": "^3.4.2"
+  }
+}
