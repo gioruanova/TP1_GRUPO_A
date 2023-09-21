@@ -1,11 +1,18 @@
 <?php
 
 // Configuracion monedas------
-$configMonedas = [
-    'Oro' => 200,
-    'Plata' => 50,
-    'Bronce' => 10
-];
+function getConfig()
+{
+    $getConfigMonedas = [
+        'Oro' => 1800,
+        'Plata' => 50,
+        'Bronce' => 10
+    ];
+    return $getConfigMonedas;
+}
+
+$configMonedas = getConfig();
+
 
 // Cofre usuario-----------
 $cofre = [
@@ -64,8 +71,9 @@ $productos = [
 
 // Funciones
 // VALOR TOTAL COFRE CLIENTE-----
-function getBonifXCofre($cofre, $configMonedas)
+function getBonifXCofre($cofre)
 {
+    $configMonedas = getConfig();
     $totalBonificado = 0;
 
     foreach ($cofre as $moneda) {
@@ -74,7 +82,7 @@ function getBonifXCofre($cofre, $configMonedas)
         foreach ($configMonedas as $monedaNombre => $value) {
             if (strtolower($monedaNombre) === $monedaLower) {
                 $totalBonificado += $value;
-                break;
+                // break;
             }
         }
     }
@@ -82,13 +90,14 @@ function getBonifXCofre($cofre, $configMonedas)
     return $totalBonificado;
 }
 
-$dinero = getBonifXCofre($cofre, $configMonedas);
+$dinero = getBonifXCofre($cofre);
 
 
 
 // VALOR COFRE CLIENTE DETALLE POR MONEDA-----
-function getDetalleXCofre($cofre, $configMonedas)
+function getDetalleXCofre($cofre)
 {
+    $configMonedas = getConfig();
     $detalle = [];
 
     foreach ($cofre as $moneda) {
@@ -108,7 +117,7 @@ function getDetalleXCofre($cofre, $configMonedas)
     return $detalle;
 }
 
-$detalle = getDetalleXCofre($cofre, $configMonedas);
+$detalle = getDetalleXCofre($cofre);
 
 
 
