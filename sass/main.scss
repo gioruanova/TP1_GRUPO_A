@@ -1,11 +1,23 @@
 // Imports-------
+@import "components/variables.scss";
 @import "components/cofre.scss";
 @import "components/productos.scss";
 
 // ------------------------------------
 // Basic config-------
+:root {
+    --animate-delay: 1s;
+}
+
 body {
-    background-color: rgb(132, 50, 139);
+    padding: 1rem 5%;
     text-align: center;
-    //codigo corregio. ponete a copiar y pegar
+    overflow: hidden;
+
+    h1 {
+        color: #5a85c8;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 30px;
+    }
 }

@@ -1,0 +1,56 @@
+// Detalle productos styles-------
+.product-table {
+    border-collapse: separate;
+
+    th {
+        border-radius: 5px 5px 0 0;
+        border: none;
+    }
+
+    .table-primary {
+
+        color: darken($darkColor, 10%);
+        border-radius: 10px;
+    }
+
+    tbody {
+        background-color: lighten($lightcolor, 5%);
+    }
+
+    tr:last-child {
+        td:first-child {
+
+            border-radius: 0 0 0 10px;
+        }
+
+        td:last-child {
+
+            border-radius: 0 0 10px 0;
+        }
+    }
+}
+
+// -----------------------------------------
+// Total a pagar styles-------
+.totalAPagar {
+    max-width: 600px;
+    margin: 0 0 0 auto;
+    border-collapse: separate;
+
+
+    th {
+        border-radius: 5px;
+        border: none;
+        color: darken($darkColor, 10%);
+
+        &:first-child {
+            text-decoration: line-through;
+            color: #3131311f;
+        }
+
+        &:last-child {
+            color: green;
+        }
+    }
+
+}

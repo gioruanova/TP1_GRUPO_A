@@ -1,17 +1,94 @@
-/* Error: expected ";".
- *   ,
- * 8 |     background-color: rgb(132, 50, 139)4);
- *   |                                         ^
- *   '
- *   sass\main.scss 8:41  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a   \2577 \a 8 \2502      background-color: rgb(132, 50, 139)4);\d\a   \2502                                          ^\a   \2575 \a   sass\\main.scss 8:41  root stylesheet';
+.cofrePopUp {
+  max-width: 400px;
+  border-collapse: separate;
+  right: 20px;
+  position: fixed;
+  bottom: 0;
+  background-color: #e9f1ff;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 7px 3px rgba(102, 121, 149, 0.5098039216);
 }
+.cofrePopUp .table-primary th {
+  border-radius: 5px 5px 0 0;
+  border: none;
+  background-color: #cfe2ff;
+  color: #5a85c8;
+  border: none;
+  padding: 2px 0;
+}
+.cofrePopUp td {
+  border: none;
+  background-color: white;
+  padding: 2px 0;
+}
+.cofrePopUp tbody tr:last-child td {
+  border-radius: 0 0 5px 5px;
+}
+.cofrePopUp .moneda {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cofrePopUp .moneda img {
+  width: 20px;
+  height: 20px;
+  margin: 0 7px 0 15px;
+}
+
+.product-table {
+  border-collapse: separate;
+}
+.product-table th {
+  border-radius: 5px 5px 0 0;
+  border: none;
+}
+.product-table .table-primary {
+  color: #5a85c8;
+  border-radius: 10px;
+}
+.product-table tbody {
+  background-color: #e9f1ff;
+}
+.product-table tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+}
+.product-table tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
+}
+
+.totalAPagar {
+  max-width: 600px;
+  margin: 0 0 0 auto;
+  border-collapse: separate;
+}
+.totalAPagar th {
+  border-radius: 5px;
+  border: none;
+  color: #5a85c8;
+}
+.totalAPagar th:first-child {
+  text-decoration: line-through;
+  color: rgba(49, 49, 49, 0.1215686275);
+}
+.totalAPagar th:last-child {
+  color: green;
+}
+
+:root {
+  --animate-delay: 1s;
+}
+
+body {
+  padding: 1rem 5%;
+  text-align: center;
+  overflow: hidden;
+}
+body h1 {
+  color: #5a85c8;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=theme.css.map */
