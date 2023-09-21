@@ -12,13 +12,15 @@
 body {
     padding: 1rem 5%;
     text-align: center;
-    overflow: hidden;
-    min-height: 50vh;
+    overflow-x: hidden;
 
     h1 {
         color: #5a85c8;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 30px;
+    }
+    .content{
+        min-height: 100vh;
     }
 }
