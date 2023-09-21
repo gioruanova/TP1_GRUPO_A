@@ -2,9 +2,17 @@
 
 // Configuracion monedas------
 $configMonedas = [
-    'oro' => 200,
-    'plata' => 50,
+    'Oro' => 200,
+    'Plata' => 50,
     'Bronce' => 10
+];
+
+// Cofre usuario-----------
+$cofre = [
+    'oro',
+    'plata',
+    'bronce',
+    'bronce',
 ];
 
 // Productos----------
@@ -54,14 +62,86 @@ $productos = [
 ];
 
 
-// Cofre usuario-----------
-$cofre = [
-    'oro',
-    'plata',
-    'bronce',
-    'bronce',
-    'oro'
-];
+// Funciones
+// VALOR TOTAL COFRE CLIENTE-----
+function getBonifXCofre($cofre, $configMonedas)
+{
+    $totalBonificado = 0;
 
+    foreach ($cofre as $moneda) {
+        $monedaLower = strtolower($moneda);
+
+        foreach ($configMonedas as $monedaNombre => $value) {
+            if (strtolower($monedaNombre) === $monedaLower) {
+                $totalBonificado += $value;
+                break;
+            }
+        }
+    }
+
+    return $totalBonificado;
+}
+
+$dinero = getBonifXCofre($cofre, $configMonedas);
+
+
+
+// VALOR COFRE CLIENTE DETALLE POR MONEDA-----
+function getDetalleXCofre($cofre, $configMonedas)
+{
+    $detalle = [];
+
+    foreach ($cofre as $moneda) {
+        $monedaLower = strtolower($moneda);
+
+        foreach ($configMonedas as $monedaNombre => $value) {
+            if (strtolower($monedaNombre) === $monedaLower) {
+                if (isset($detalle[$monedaNombre])) {
+                    $detalle[$monedaNombre]++;
+                } else {
+                    $detalle[$monedaNombre] = 1;
+                }
+            }
+        }
+    }
+
+    return $detalle;
+}
+
+$detalle = getDetalleXCofre($cofre, $configMonedas);
+
+
+
+
+// VALOR TOTAL PRODUCTOS CLIENTE-----
+function getMontoXProductos($productos)
+{
+    $valorTotal = 0;
+    foreach ($productos as $prod) {
+
+        $valorTotal += ($prod['precio'] * $prod['cantidad']);
+    }
+    return $valorTotal;
+
+}
+
+$monto = getMontoXProductos($productos);
+
+
+
+
+// VALOR FINAL A PAGAR CON DESCUENTO-----
+function totalAPagar($totalProductos, $totalDescuento)
+{
+    $totalAPagar = $totalProductos;
+    if ($totalProductos - $totalDescuento < 0) {
+        $totalAPagar = 0;
+    } else {
+        $totalAPagar = $totalProductos - $totalDescuento;
+    }
+    return $totalAPagar;
+}
+
+$montoFinal = totalAPagar($monto, $dinero);
 
 ?>

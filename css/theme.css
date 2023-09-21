@@ -10,20 +10,31 @@
   box-shadow: 0 0 7px 3px rgba(102, 121, 149, 0.5098039216);
 }
 .cofrePopUp .table-primary th {
-  border-radius: 5px 5px 0 0;
   border: none;
   background-color: #cfe2ff;
   color: #5a85c8;
   border: none;
   padding: 2px 0;
 }
+.cofrePopUp .table-primary th:first-child {
+  border-radius: 5px 0 0 0;
+}
+.cofrePopUp .table-primary th:last-child {
+  border-radius: 0 5px 0 0;
+}
 .cofrePopUp td {
   border: none;
   background-color: white;
   padding: 2px 0;
 }
-.cofrePopUp tbody tr:last-child td {
-  border-radius: 0 0 5px 5px;
+.cofrePopUp tbody tr {
+  text-align: center;
+}
+.cofrePopUp tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+.cofrePopUp tbody tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
 }
 .cofrePopUp .moneda {
   display: flex;
@@ -33,15 +44,20 @@
 .cofrePopUp .moneda img {
   width: 20px;
   height: 20px;
-  margin: 0 7px 0 15px;
+  margin: 0 7px 0 5px;
 }
 
 .product-table {
   border-collapse: separate;
 }
 .product-table th {
-  border-radius: 5px 5px 0 0;
   border: none;
+}
+.product-table th:first-child {
+  border-radius: 10px 0 0 0;
+}
+.product-table th:last-child {
+  border-radius: 0 10px 0 0;
 }
 .product-table .table-primary {
   color: #5a85c8;
@@ -69,7 +85,7 @@
 }
 .totalAPagar th:first-child {
   text-decoration: line-through;
-  color: rgba(49, 49, 49, 0.1215686275);
+  color: rgba(49, 49, 49, 0.2745098039);
 }
 .totalAPagar th:last-child {
   color: green;

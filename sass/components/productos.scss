@@ -3,7 +3,14 @@
     border-collapse: separate;
 
     th {
-        border-radius: 5px 5px 0 0;
+        &:first-child {
+            border-radius: 10px 0 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 10px 0 0;
+        }
+
         border: none;
     }
 
@@ -45,7 +52,7 @@
 
         &:first-child {
             text-decoration: line-through;
-            color: #3131311f;
+            color: #31313146;
         }
 
         &:last-child {

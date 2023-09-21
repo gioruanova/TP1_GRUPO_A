@@ -11,7 +11,14 @@
 
     .table-primary {
         th {
-            border-radius: 5px 5px 0 0;
+            &:first-child {
+                border-radius: 5px 0 0 0;
+            }
+
+            &:last-child {
+                border-radius: 0 5px 0 0;
+            }
+
             border: none;
             background-color: $lightcolor;
             color: darken($darkColor, 10%);
@@ -31,23 +38,31 @@
     }
 
     tbody {
+        tr {
+            text-align: center;
+        }
+
         tr:last-child {
-            td {
-                border-radius: 0 0 5px 5px;
+            td:first-child {
+                border-radius: 0 0 0 5px;
             }
 
+            td:last-child {
+                border-radius: 0 0 5px 0;
+            }
         }
     }
 
-.moneda{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    img{
-        width: 20px;
-        height: 20px;
-        margin: 0 7px 0 15px;
+    .moneda {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        img {
+            width: 20px;
+            height: 20px;
+            margin: 0 7px 0 5px;
+        }
     }
-}
 
 }
