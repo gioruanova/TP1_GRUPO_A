@@ -1,5 +1,5 @@
-<?php 
+<?php
 // Funciones...
 
-
+$hola = "Hola";
 ?>
