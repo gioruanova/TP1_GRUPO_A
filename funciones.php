@@ -1,28 +1,28 @@
 <?php
 
-// Configuracion monedas------
+// -----------------CONFIGURACION MONEDAS-----------------
 function getConfig()
 {
     $getConfigMonedas = [
-        'Oro' => 1800,
-        'Plata' => 50,
-        'Bronce' => 10
+        'oro' => 200,
+        'plata' => 50,
+        'bronce' => 10
     ];
     return $getConfigMonedas;
 }
-
 $configMonedas = getConfig();
 
 
-// Cofre usuario-----------
+// -----------------COFRE USUARIO MONEDAS-----------------
 $cofre = [
     'oro',
     'plata',
     'bronce',
     'bronce',
+    'oro'
 ];
 
-// Productos----------
+// -----------------PRODUCTOS-----------------
 $productos = [
     [
         'cod' => 111,
@@ -68,61 +68,68 @@ $productos = [
     ],
 ];
 
+// --------------------------------------------
+// CONSIGNAS
+// --------------------------------------------
 
-// Funciones
-// VALOR TOTAL COFRE CLIENTE-----
+
+// --------------------------------------------
+// EJERCIO 1: 
+// VALOR TOTAL COFRE CLIENTE-------------------
 function getBonifXCofre($cofre)
 {
     $configMonedas = getConfig();
     $totalBonificado = 0;
-
     foreach ($cofre as $moneda) {
         $monedaLower = strtolower($moneda);
 
         foreach ($configMonedas as $monedaNombre => $value) {
             if (strtolower($monedaNombre) === $monedaLower) {
                 $totalBonificado += $value;
-                // break;
             }
         }
     }
-
     return $totalBonificado;
 }
-
 $dinero = getBonifXCofre($cofre);
 
+// Validacion:
+// echo "<pre>";
+// var_dump($dinero);
 
 
-// VALOR COFRE CLIENTE DETALLE POR MONEDA-----
+
+// --------------------------------------------
+// EJERCIO 2: 
+// VALOR CANTIDAD MONEDAS COFRE-------------------
 function getDetalleXCofre($cofre)
 {
-    $configMonedas = getConfig();
-    $detalle = [];
-
+    $valorMoneda = getConfig();
+    $monedas = [
+        'oro' => 0,
+        'plata' => 0,
+        'bronce' => 0,
+        'bonif' => 0,
+    ];
     foreach ($cofre as $moneda) {
-        $monedaLower = strtolower($moneda);
-
-        foreach ($configMonedas as $monedaNombre => $value) {
-            if (strtolower($monedaNombre) === $monedaLower) {
-                if (isset($detalle[$monedaNombre])) {
-                    $detalle[$monedaNombre]++;
-                } else {
-                    $detalle[$monedaNombre] = 1;
-                }
-            }
+        if (isset($valorMoneda[$moneda])) {
+            $monedas[$moneda]++;
+            $monedas['bonif'] += $valorMoneda[$moneda];
         }
     }
-
-    return $detalle;
+    return $monedas;
 }
+$detallePorMoneda = getDetalleXCofre($cofre);
 
-$detalle = getDetalleXCofre($cofre);
+// Validacion:
+// echo "<pre>";
+// var_dump($detallePorMoneda);
 
 
 
-
-// VALOR TOTAL PRODUCTOS CLIENTE-----
+// --------------------------------------------
+// EJERCIO 3: 
+// VALOR CANTIDAD MONEDAS COFRE-------------------
 function getMontoXProductos($productos)
 {
     $valorTotal = 0;
@@ -136,6 +143,9 @@ function getMontoXProductos($productos)
 
 $monto = getMontoXProductos($productos);
 
+// Validacion:
+// echo "<pre>";
+// var_dump($monto);
 
 
 
@@ -152,5 +162,9 @@ function totalAPagar($totalProductos, $totalDescuento)
 }
 
 $montoFinal = totalAPagar($monto, $dinero);
+
+// Validacion:
+// echo "<pre>";
+// var_dump($montoFinal);
 
 ?>
