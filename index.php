@@ -46,7 +46,7 @@
 
           echo "<td class='text-center'> {$prod['detalle']} </td>";
           echo "<td class='text-center'>$ " . number_format($prod['precio'], 2, ',', '.') . "</td>";
-          echo "<td class='text-center'>x{$prod['cantidad']}</td>";
+          echo "<td class='text-center'>{$prod['cantidad']}</td>";
           echo "<td class='text-center'>$" . number_format($prod['precio'] * $prod['cantidad'], 2, ',', '.') . "</td>";
           echo "</tr>";
         }
