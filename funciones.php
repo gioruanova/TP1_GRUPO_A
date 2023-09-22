@@ -81,10 +81,8 @@ function getBonifXCofre($cofre)
     $configMonedas = getConfig();
     $totalBonificado = 0;
     foreach ($cofre as $moneda) {
-        $monedaLower = strtolower($moneda);
-
         foreach ($configMonedas as $monedaNombre => $value) {
-            if (strtolower($monedaNombre) === $monedaLower) {
+            if (strtolower($monedaNombre) === $moneda) {
                 $totalBonificado += $value;
             }
         }
