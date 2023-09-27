@@ -24,7 +24,7 @@
 }
 .cofrePopUp td {
   border: none;
-  background-color: white;
+  background-color: #ffffff;
   padding: 2px 0;
 }
 .cofrePopUp tbody tr {
@@ -108,6 +108,12 @@ body h1 {
 }
 body .content {
   min-height: 100vh;
+}
+body .content h1 {
+  background: #80a1d5;
+  padding: 6px 0;
+  color: #ffffff;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=theme.css.map */

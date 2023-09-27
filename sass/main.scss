@@ -22,5 +22,11 @@ body {
     }
     .content{
         min-height: 100vh;
+        h1{
+            background: $darkColor;
+            padding: 6px 0;
+            color: $white;
+            border-radius: 10px;
+        }
     }
 }
