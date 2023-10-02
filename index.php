@@ -10,19 +10,20 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="css/theme.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <title>PHP</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <title>PHP - Supermercado</title>
 </head>
 
 <body>
   <div class="content">
-    <h1 class="mb-4 mt-2 animate__animated animate__fadeIn animate__slow">Detalle productos</h1>
+    <h1 class="mb-4 mt-2 animate__animated animate__backInDown animate__slow">Detalle productos</h1>
 
-    
+
     <!-- EJERCICIO 4: CODIGO EN HTML -->
 
-         <!-- EJERCICIO 4b: LISTADO DE PRODUCTOS -->
+    <!-- EJERCICIO 4b: LISTADO DE PRODUCTOS -->
     <!-- ------------------------------------COMIENZO PRODUCTOS------------------------------------ -->
-    <table class="table product-table animate__animated animate__fadeInLeft animate__slow">
+    <table class="table product-table animate__animated animate__backInLeft animate__slow">
       <thead>
         <tr class="table-primary">
           <th scope="col">Codigo</th>
@@ -59,7 +60,7 @@
 
     <!-- EJERCICIO 4c: TOTALES -->
     <!-- ------------------------------------COMIENZO TOTALES------------------------------------ -->
-    <table class="table totalAPagar animate__animated animate__fadeInRight animate__slow">
+    <table class="table totalAPagar animate__animated animate__backInRight animate__slow">
       <thead>
         <tr class="table-primary">
           <th scope='col' class='sinDescuento'>
@@ -74,9 +75,9 @@
     <!-- ------------------------------------FIN TOTALES------------------------------------ -->
 
 
-     <!-- EJERCICIO 4a: COFRE CLIENTE EN HTML -->
+    <!-- EJERCICIO 4a: COFRE CLIENTE EN HTML -->
     <!-- ------------------------------------COMIENZO COFRE------------------------------------ -->
-    <table class="table cofrePopUp animate__animated animate__bounceInUp">
+    <table class="table cofrePopUp animate__animated animate__bounceIn animate__slow">
       <thead>
         <tr class="table-primary">
           <th scope="col">Moneda</th>
