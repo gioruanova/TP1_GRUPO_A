@@ -63,15 +63,25 @@
     <table class="table totalAPagar animate__animated animate__backInRight animate__slow">
       <thead>
         <tr class="table-primary">
-          <th scope='col' class='sinDescuento'>
-            <?php echo "Total: $" . number_format($monto, 2, ',', '.') ?>
-          </th>
-          <th scope='col' class='conDescuento'>
-            <?php echo "Total con descuento: $" . number_format($montoFinal, 2, ',', '.') ?>
-          </th>
+          <?php if ($dinero <= 0): ?>
+            <th scope='col' class='conDescuento'>
+              <?php echo "Total a abonar: $" . number_format($monto, 2, ',', '.') ?>
+            </th>
+          <?php else: ?>
+            <th scope='col' class='sinDescuento'>
+              <?php echo "Total: $" . number_format($monto, 2, ',', '.') ?>
+            </th>
+            <th scope='col' class='conDescuento'>
+              <?php echo "Total con descuento: $" . number_format($montoFinal, 2, ',', '.') ?>
+
+            </th>
+          <?php endif ?>
+
+
         </tr>
       </thead>
     </table>
+
     <!-- ------------------------------------FIN TOTALES------------------------------------ -->
 
 

@@ -78,14 +78,14 @@
   margin: 0 0 0 auto;
   border-collapse: separate;
 }
+.totalAPagar .sinDescuento {
+  text-decoration: line-through;
+  color: rgba(49, 49, 49, 0.2745098039);
+}
 .totalAPagar th {
   border-radius: 5px;
   border: none;
   color: #5a85c8;
-}
-.totalAPagar th:first-child {
-  text-decoration: line-through;
-  color: rgba(49, 49, 49, 0.2745098039);
 }
 .totalAPagar th:last-child {
   color: green;
