@@ -13,7 +13,6 @@ TP FINAL realizado en PHP con conexion a MYSQL.
 
 
 ## 🛠 Config:
--Validar que la db y ruta estan correctamente actualizadas en el archivo __conf/globalConfig.php__ en la linea 10:
 ```bash
 npm install
 ```
